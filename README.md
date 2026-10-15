@@ -7,4 +7,4 @@ Passwortgeschützte Lernseite für die Feuerwehr-Ausbildung: Lerninhalte, Prüfu
 
 Aktuelle Inhalte:
 
-- Modul 2 – Gefahren der Einsatzstelle (11 Lernseiten, 85 Prüfungsfragen, 71 Übungsfragen)
+- Modul 2 – Gefahren der Einsatzstelle (10 Lernseiten, 85 Prüfungsfragen, 71 Übungsfragen)

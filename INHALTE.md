@@ -33,6 +33,8 @@ Ordnernamen: nur Kleinbuchstaben, Zahlen und Bindestriche (keine Umlaute, keine 
 3. Lernseiten als `01-name.md`, `02-name.md` … Die erste Zeile `# Überschrift` ist der Seitentitel.
 4. Optional `pruefung.md` und `uebung.md` (Format siehe unten).
 
+**Seite ausblenden:** Dateinamen mit `_` beginnen lassen (z. B. `_11-fehler-in-den-folien.md`). Die Seite bleibt erhalten, wird aber nicht angezeigt. Zum Einblenden den `_` wieder entfernen. Einzelne Absätze blendet man aus, indem man sie zwischen `<!--` und `-->` setzt.
+
 Ein neues Modul geht genauso: Ordner `content/modul-3/` mit `modul.json` (`{ "titel": "Modul 3" }`).
 
 ## Lernseiten (Markdown)

@@ -37,7 +37,9 @@
 
 Weitere: H261 – entwickelt mit Wasser entzündbare Gase; H250 – selbstentzündlich an der Luft.
 
+<!-- ausgeblendet:
 > [!FEHLER] Die Folien nutzen hier noch die alten Grenzen (0 / 21 / 55 °C) und Symbole F / F+ aus dem abgelösten Stoffrecht. Oben stehen die aktuellen CLP-Werte.
+-->
 
 ## GHS-Piktogramme
 
