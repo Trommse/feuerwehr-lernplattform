@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#b3121f">
+  <title>Anmelden – Lernplattform</title>
+  <link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body class="login-body">
+  <main class="login-card">
+    <img src="/assets/icon.svg" alt="" class="login-icon">
+    <h1>Lernplattform</h1>
+    <p class="muted">Feuerwehr-Ausbildung · Bitte Passwort eingeben</p>
+    <div id="fehler" class="login-error" hidden></div>
+    <form method="post" action="/login">
+      <label for="password">Passwort</label>
+      <input id="password" name="password" type="password" autocomplete="current-password" required autofocus>
+      <button type="submit" class="btn btn-primary btn-block">Anmelden</button>
+    </form>
+  </main>
+  <script>
+    var f = new URLSearchParams(location.search).get('fehler');
+    var box = document.getElementById('fehler');
+    if (f === 'passwort') { box.textContent = 'Das Passwort ist falsch.'; box.hidden = false; }
+    if (f === 'gesperrt') { box.textContent = 'Zu viele Fehlversuche. Bitte in 15 Minuten erneut versuchen.'; box.hidden = false; }
+  </script>
+</body>
+</html>

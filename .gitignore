@@ -1,0 +1,4 @@
+# Niemals ins Repository:
+.env
+node_modules/
+*.log
