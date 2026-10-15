@@ -12,7 +12,7 @@ const PORT = parseInt(process.env.PORT || '8080', 10);
 const APP_PASSWORD = process.env.APP_PASSWORD || '';
 const SESSION_SECRET = process.env.SESSION_SECRET || crypto.randomBytes(32).toString('hex');
 const SESSION_DAYS = parseInt(process.env.SESSION_DAYS || '30', 10);
-const SITE_TITLE = process.env.SITE_TITLE || 'Feuerwehr Lernplattform';
+const SITE_TITLE = process.env.SITE_TITLE || 'Tim’s Feuerwehr Lernplattform';
 const COOKIE_SECURE = process.env.COOKIE_SECURE === 'true';
 
 if (!APP_PASSWORD) {
@@ -114,6 +114,7 @@ app.use(express.json({ limit: '10kb' }));
 // ---------------------------------------------------------------------------
 const publicDir = path.join(__dirname, 'public');
 
+app.get('/titel', (req, res) => res.json({ titel: SITE_TITLE }));
 app.get('/health', (req, res) => res.json({ ok: true }));
 app.get('/robots.txt', (req, res) => res.type('text/plain').send('User-agent: *\nDisallow: /\n'));
 

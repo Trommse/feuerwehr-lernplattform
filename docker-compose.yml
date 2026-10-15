@@ -9,7 +9,7 @@ services:
       - TZ=Europe/Berlin
       - APP_PASSWORD=${APP_PASSWORD}
       - SESSION_SECRET=${SESSION_SECRET}
-      - SITE_TITLE=${SITE_TITLE:-Feuerwehr Lernplattform}
+      - SITE_TITLE=${SITE_TITLE:-Tim’s Feuerwehr Lernplattform}
       - COOKIE_SECURE=${COOKIE_SECURE:-false}
     volumes:
       # Inhalte direkt aus dem Ordner lesen: neue Themen sind nach "git pull" sofort da
