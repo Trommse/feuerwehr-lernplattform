@@ -178,6 +178,9 @@
       }
       h += '</nav>';
       render(h);
+      Array.prototype.forEach.call(main.querySelectorAll('.prose img'), function (img) {
+        img.addEventListener('click', function () { window.open(img.src, '_blank'); });
+      });
     }).catch(function (e) { if (e.message !== '401') notFound(); });
   }
 

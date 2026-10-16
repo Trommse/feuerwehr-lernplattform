@@ -6,6 +6,9 @@
 
 ## Ursachen
 
+![Quellfähige Stoffe sprengen den Behälter](bilder/quellfaehige-stoffe.jpg)
+*Quellfähige Stoffe sprengen den Behälter (Folie 203)*
+
 - **Schwächung der Tragkraft:** Abbrand von Holz, Erwärmung von Stahl, Strukturveränderung von Stein
 - Lockerung des Baugefüges, von Verankerungen und Querverbänden
 - **Überlastung** durch Löschwasser, Brandschutt oder Teileinstürze
@@ -26,6 +29,15 @@
 
 ### Stahl
 
+![Glühfarben von Stahl](bilder/gluehfarben.jpg)
+*Glühfarben von Stahl (Folie 180)*
+
+![Ausdehnung von Stahl schiebt Wände weg](bilder/stahl-ausdehnung.jpg)
+*Ausdehnung von Stahl schiebt Wände weg (Folie 181)*
+
+![Abgescherte Verbindungen](bilder/abscheren.jpg)
+*Abgescherte Verbindungen (Folie 182)*
+
 - Verliert seine Tragfähigkeit ab ca. **500 °C** (kritische Temperatur).
 - Dehnt sich aus: **1,2 mm je Meter je 100 K** – schiebt Wände weg, schert Verbindungen ab.
 - Zieht sich beim Abkühlen wieder zusammen – auch dann Einsturzgefahr.
@@ -43,6 +55,15 @@
 - Freigebrannte Schornsteine und Giebelwände verlieren ihre Standfestigkeit.
 
 ## Nagelplattenbinder (z. B. Supermärkte, Hallen)
+
+![Typische Nagelplatte](bilder/nagelplatte.jpg)
+*Typische Nagelplatte (Folie 188)*
+
+![Dachkonstruktion mit Nagelplattenbindern](bilder/dachkonstruktion.jpg)
+*Dachkonstruktion mit Nagelplattenbindern (Folie 190)*
+
+![Gefahrhinweis-Schild „Nagelplatten F0“](bilder/nagelplatten-hinweis.jpg)
+*Gefahrhinweis-Schild „Nagelplatten F0“ (Folie 196)*
 
 - Seit Mitte der 1960er verwendet: verzinkte Stahlplatten mit 7–21 mm langen Nägeln verbinden sägeraues Bauholz (5–6 cm breit) im stumpfen Stoß; Binder bis 35 m Länge.
 - Binderabstand 75–125 cm, statische Auslastung 80–100 %, Dachlattung statisch notwendig.

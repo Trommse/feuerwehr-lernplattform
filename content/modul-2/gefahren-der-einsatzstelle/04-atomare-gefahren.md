@@ -15,6 +15,9 @@ Industrie · Medizin (Praxen, Kliniken, Labore) · kerntechnische Anlagen · For
 
 **Warum?** Eine punktförmige Quelle strahlt gleichmäßig in alle Richtungen (das meint „isotrop“), wie eine Glühbirne im dunklen Raum. Die Strahlung verteilt sich auf eine immer größere Kugeloberfläche. Bei doppeltem Radius ist die Oberfläche 2 × 2 = 4-mal so groß – dieselbe Strahlung verteilt sich auf die vierfache Fläche, also kommt an jeder Stelle nur noch ¼ an. Daher „umgekehrtes Quadrat der Entfernung“.
 
+![Abstandsgesetz: doppelter Abstand – vierfache Fläche – ¼ der Strahlung](bilder/abstandsgesetz.jpg)
+*Abstandsgesetz: doppelter Abstand – vierfache Fläche – ¼ der Strahlung (Folie 45)*
+
 | Abstand | Strahlung im Vergleich zu 1 m |
 |---|---|
 | 1 m | 100 % |
@@ -43,11 +46,17 @@ Industrie · Medizin (Praxen, Kliniken, Labore) · kerntechnische Anlagen · For
 
 ### Gefahren und Folgen
 
+![Inkorporation und Kontamination](bilder/strahlung-gefahren.jpg)
+*Inkorporation und Kontamination (Folie 50)*
+
 - **Kontamination** (Verunreinigung der Haut/Kleidung), **Inkorporation** (Aufnahme in den Körper), **äußere Bestrahlung**
 - Akute Strahlenkrankheit (Übelkeit, Erbrechen, Haarausfall; bei massiver Dosis tödlich)
 - Spätschäden (Krebs, Leukämie) und genetische Schäden
 
 ### Dosiswerte zur Einordnung
+
+![Bedeutung der Dosiswerte](bilder/dosiswerte.jpg)
+*Bedeutung der Dosiswerte (Folie 69)*
 
 - Vernachlässigbar: 10 µSv/Jahr
 - Grenzwert Bevölkerung: 1 mSv/Jahr
@@ -65,6 +74,9 @@ Industrie · Medizin (Praxen, Kliniken, Labore) · kerntechnische Anlagen · For
 
 ## Einsatzgrundsätze Strahlenschutz
 
+![Aufbau eines Dekon-Platzes](bilder/dekon-platz.jpg)
+*Aufbau eines Dekon-Platzes (Folie 61)*
+
 - Im Gefahrenbereich Schutzausrüstung und Atemschutz; offene Hautstellen abdecken.
 - Nicht essen, trinken oder rauchen.
 - Kräfte mit offenen Wunden nicht einsetzen.
@@ -76,12 +88,18 @@ Industrie · Medizin (Praxen, Kliniken, Labore) · kerntechnische Anlagen · For
 
 ## Persönliche Schutzausrüstung
 
+![Schutzform 1, 2 und 3](bilder/schutzformen.jpg)
+*Schutzform 1, 2 und 3 (Folie 63–65)*
+
 - **Atemschutz:** Filtergerät ABEK2-P3 oder Isoliergerät (Pressluftatmer)
 - **Schutzform 1:** Feuerschutzkleidung mit Kontaminationsschutzhaube
 - **Schutzform 2:** zusätzlich Kontaminationsschutzanzug
 - **Schutzform 3:** gasdichter Chemikalienschutzanzug (Typ 1a-ET)
 
 ## Transportkennzeichnung nach Aktivität
+
+![Gefahrzettel I-WEISS, II-GELB, III-GELB](bilder/transport-radioaktiv.jpg)
+*Gefahrzettel I-WEISS, II-GELB, III-GELB (Folie 66–68)*
 
 | Kategorie | Dosisleistung | Arbeiten |
 |---|---|---|

@@ -8,6 +8,9 @@
 
 ## Säuren und Laugen
 
+![pH-Skala und Maßnahmen](bilder/ph-skala.jpg)
+*pH-Skala und Maßnahmen (Folie 129)*
+
 - Verursachen Verätzungen von Augen, Haut und Atemwegen und zerstören Kleidung und Gerät. Ihre Dämpfe sind Atemgifte.
 - Vorkommen: Gewerbe, Transporte in Tanks und Behältern.
 - pH-Skala: 1 Salzsäure · 3 Essig · 7 reines Wasser (neutral) · 11 Sodalösung · 14 Natronlauge
@@ -43,6 +46,9 @@ Weitere: H261 – entwickelt mit Wasser entzündbare Gase; H250 – selbstentzü
 
 ## GHS-Piktogramme
 
+![GHS-Piktogramme](bilder/ghs-symbole.jpg)
+*GHS-Piktogramme (Folie 135–136)*
+
 Gefahrstoffe in Verpackungen werden mit den 9 GHS-Piktogrammen (rote Raute) gekennzeichnet, z. B. Flamme, Totenkopf, Ätzwirkung, Gasflasche (**neu** für Gase unter Druck) und Gesundheitsgefahr (**neu** für CMR-Stoffe: krebserzeugend, erbgutverändernd, fortpflanzungsgefährdend).
 
 ## Gefahrklassen nach ADR
@@ -61,11 +67,17 @@ Gefahrstoffe in Verpackungen werden mit den 9 GHS-Piktogrammen (rote Raute) geke
 
 ## Transportkennzeichnung
 
+![Gefahrzettel und orange Warntafel](bilder/transportkennzeichnung.jpg)
+*Gefahrzettel und orange Warntafel (Folie 141)*
+
 **Gefahrzettel (Raute):** an Versandstücken, Tanks, Tankfahrzeugen, Aufsetztanks; mind. 10 × 10 cm; zeigt die Gefahrklasse.
 
 **Orange Warntafel:** an Beförderungseinheiten, vorn und hinten, 40 × 30 cm. Mit Nummern bei Tanks / bestimmten Stoffen: **oben Gefahrnummer, unten UN-Nummer** (Stoffnummer, immer 4-stellig).
 
 ### Gefahrnummer (obere Zahl)
+
+![Beispiel: X 423 / 1428 = Natrium](bilder/warntafel-natrium.jpg)
+*Beispiel: X 423 / 1428 = Natrium (Folie 262)*
 
 | Ziffer | Bedeutung |
 |---|---|
@@ -84,6 +96,15 @@ Gefahrstoffe in Verpackungen werden mit den 9 GHS-Piktogrammen (rote Raute) geke
 - Beispiele: 22 tiefgekühltes Gas · 72 radioaktives Gas · X886 stark ätzend, giftig, reagiert gefährlich mit Wasser · **X423 / 1428 = Natrium** (entzündbarer fester Stoff, bildet mit Wasser entzündbare Gase)
 
 ### Weitere Kennzeichnungen
+
+![Transport-Zusatzzeichen](bilder/zusatzzeichen.jpg)
+*Transport-Zusatzzeichen (Folie 140)*
+
+![Blaue Kegel bzw. Lichter an Binnenschiffen](bilder/schiffe.jpg)
+*Blaue Kegel bzw. Lichter an Binnenschiffen (Folie 146)*
+
+![Farbkennzeichnung von Gasflaschen](bilder/gasflaschen.jpg)
+*Farbkennzeichnung von Gasflaschen (Folie 152)*
 
 - **Zusatzzeichen:** aufrecht stellen, vorsichtig verschieben, Abstoß- und Auflaufverbot, erwärmte Stoffe.
 - **Schiffe (blaue Kegel/Lichter):** 1 Kegel = feuergefährliche Ladung · 2 Kegel = Ammoniak o. ä. (gesundheitsgefährlich) · 3 Kegel = explosionsgefährliche Ladung.

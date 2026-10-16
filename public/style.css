@@ -299,3 +299,7 @@ legend { font-weight: 700; margin-bottom: 8px; }
   h1 { font-size: 1.5rem; }
   .pager .btn { flex: 1; }
 }
+
+/* ------------------------------------------------ Bilder aus den Folien */
+.prose img { display: block; max-width: min(100%, 640px); height: auto; margin: 14px 0 4px; border: 1px solid var(--linie); border-radius: 10px; background: #fff; cursor: zoom-in; }
+.prose img + em, .prose p > em:only-child { display: block; font-size: .85rem; color: var(--muted); margin-bottom: 14px; }

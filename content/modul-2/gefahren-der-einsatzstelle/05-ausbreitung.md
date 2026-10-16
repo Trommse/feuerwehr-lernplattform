@@ -10,6 +10,9 @@
 
 ### Formen der Wärmeausbreitung
 
+![Formen der Wärmeausbreitung](bilder/waermeausbreitung.jpg)
+*Formen der Wärmeausbreitung (Folie 74)*
+
 | Form | Erklärung | Beispiel |
 |---|---|---|
 | **Wärmeleitung** | Übertragung von Teilchen zu Teilchen in festen Stoffen, v. a. Metallen | Heizungsrohre, Stahlträger |
@@ -21,6 +24,9 @@
 | **Feuerüberschlag** | Feuer schlägt z. B. über Fenster in das nächste Geschoss | Fassadenbrand |
 
 ## Flash-Over (Rauchdurchzündung)
+
+![Flash-Over: Rauchschicht über 600 °C](bilder/flashover.jpg)
+*Flash-Over: Rauchschicht über 600 °C (Folie 85)*
 
 Schneller Übergang von einem örtlich begrenzten Brand zum **Vollbrand des ganzen Raumes**: Die Wärmestrahlung der heißen Rauchschicht zersetzt alle brennbaren Stoffe (Pyrolyse), bis die Pyrolysegase im gesamten Raum zünden.
 
@@ -42,6 +48,9 @@ Schneller Übergang von einem örtlich begrenzten Brand zum **Vollbrand des ganz
 **Ziel der direkten Brandbekämpfung:** weniger Brand, Wärme, Atemgifte, Sichtbehinderung und Wasserdampf – mehr Sicherheit für den Trupp.
 
 ## Backdraft (Rauchexplosion)
+
+![Die 4 Phasen des Backdrafts](bilder/backdraft-phasen.jpg)
+*Die 4 Phasen des Backdrafts (Folie 92–95)*
 
 Explosion von **Schwel- und Pyrolysegasen** nach plötzlicher Luftzufuhr. Ablauf in 4 Phasen:
 
@@ -66,6 +75,9 @@ Explosion von **Schwel- und Pyrolysegasen** nach plötzlicher Luftzufuhr. Ablauf
 
 ## Ausbreitung von Rauch und Schadstoffen
 
+![Rauch aus einem Kellerbrand staut sich im Dachgeschoss](bilder/rauch-treppenhaus.jpg)
+*Rauch aus einem Kellerbrand staut sich im Dachgeschoss (Folie 101)*
+
 - Im Freien breiten sich Atemgifte hauptsächlich **mit dem Wind** aus – Gefährdung Unbeteiligter.
 - In Gebäuden breitet sich Rauch über Öffnungen, Gänge, Schächte und Kanäle aus. Hauptgefahr sind die enthaltenen Atemgifte.
 - Rauch aus einem Kellerbrand kann sich im Dachgeschoss stauen und dort Sekundärbrände auslösen – kontrolliert belüften, Kamineffekt beachten.
@@ -79,6 +91,9 @@ Vergleich: trockene Luft 28,94 g/mol.
 - Faulgase sammeln sich in Kanalisation und Jauchegruben
 
 ## Belastetes Löschwasser
+
+![Gulliei und Schachtabdeckung zur Löschwasserrückhaltung](bilder/gulliei.jpg)
+*Gulliei und Schachtabdeckung zur Löschwasserrückhaltung (Folie 110)*
 
 - Mit giftigen oder ätzenden Stoffen belastetes Löschwasser zurückhalten (z. B. Kanalabdeckungen, aufblasbares „Gulliei“, Schachtabdeckung mit Wasserfüllung, Kombischott).
 - Wenn das anfangs nicht möglich ist: passende Einheiten nachfordern.
@@ -102,6 +117,9 @@ Vergleich: trockene Luft 28,94 g/mol.
 - Unerlaubte Öffnungen in Brandwänden oder Decken, falsch abgehängte Decken, Lüftungs- und Kabelkanäle ohne Brandschutz – oft schwer zu erkennen
 
 ## Sonderfall Biogasanlage
+
+![Funktionsweise einer Biogasanlage](bilder/biogasanlage.jpg)
+*Funktionsweise einer Biogasanlage (Folie 119)*
 
 Gülle und andere Rohstoffe werden im **Fermenter** vergoren; das entstehende Biogas treibt im Blockheizkraftwerk (BHKW) einen Motor an, der Strom und Wärme erzeugt.
 

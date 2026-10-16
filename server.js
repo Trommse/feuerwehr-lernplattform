@@ -199,6 +199,13 @@ app.get('/api/suche', (req, res) => {
   res.json(content.search(String(req.query.q || '')));
 });
 
+app.get('/bilder/:modul/:thema/:datei', (req, res) => {
+  const file = content.bildPfad(req.params.modul, req.params.thema, req.params.datei);
+  if (!file) return res.status(404).end();
+  res.setHeader('Cache-Control', 'private, max-age=86400');
+  res.sendFile(file);
+});
+
 app.use(express.static(publicDir, { index: 'index.html', extensions: ['html'] }));
 
 // Alles andere -> App (Navigation läuft im Browser)

@@ -16,4 +16,7 @@ Die Dienstgrade der Freiwilligen Feuerwehr in NRW, von unten nach oben. Bei den 
 | 10 | Brandoberinspektorin / Brandoberinspektor | |
 | 11 | Stadtbrandinspektorin / Stadtbrandinspektor | |
 
+
+![Schulterabzeichen der Dienstgrade](bilder/dienstgrade.jpg)
+*Schulterabzeichen der Dienstgrade (Folie 11–21)*
 > [!MERKE] Neue Mitglieder beginnen als **Anwärter/in**. Nach der Grundausbildung folgt **Feuerwehrmann/-frau**.

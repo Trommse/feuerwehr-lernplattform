@@ -55,6 +55,15 @@ Neben dem taktischen Schema gibt es Gefahren aus den **örtlichen, räumlichen, 
 
 ### Absicherung von Einsatzstellen im Straßenverkehr
 
+![Absicherung auf der Landstraße – in beide Richtungen](bilder/absicherung-landstrasse.jpg)
+*Absicherung auf der Landstraße – in beide Richtungen (Folie 7)*
+
+![Vor Kurven und Kuppen früher beginnen](bilder/absicherung-kurve.jpg)
+*Vor Kurven und Kuppen früher beginnen (Folie 8)*
+
+![Autobahn: 800 m und Wiederholung bei 600 m](bilder/absicherung-autobahn.jpg)
+*Autobahn: 800 m und Wiederholung bei 600 m (Folie 10)*
+
 | Straße | Geschwindigkeit | Absicherung beginnt entgegen der Fahrtrichtung |
 |---|---|---|
 | Innerorts | bis 50 km/h | bis ca. 60 m (den Gegebenheiten anpassen) |

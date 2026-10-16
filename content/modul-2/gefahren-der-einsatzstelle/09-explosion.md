@@ -15,9 +15,15 @@ Eine plötzliche Oxidations- oder Zerfallsreaktion mit Anstieg der Temperatur, d
 
 ### Voraussetzungen
 
+![Voraussetzungen einer Explosion](bilder/explosion-voraussetzungen.jpg)
+*Voraussetzungen einer Explosion (Folie 209)*
+
 Brennstoff (brennbare Gase, Dämpfe, Stäube) muss – anders als beim normalen Brand – **fein verteilt in Luft** und **innerhalb der Explosionsgrenzen** vorliegen, dazu eine Zündquelle.
 
 ## Explosionsgrenzen
+
+![Zu mager – explosionsfähig – zu fett](bilder/explosionsgrenzen.jpg)
+*Zu mager – explosionsfähig – zu fett (Folie 210)*
 
 Unter der **UEG** (untere Explosionsgrenze) ist das Gemisch zu mager, über der **OEG** (obere Explosionsgrenze) zu fett – dazwischen ist es explosionsfähig.
 
@@ -63,6 +69,9 @@ Dazu: Fortschleudern und Absturz von Personen, Trümmerflug, Gebäudeeinsturz, F
 ## Sonderformen
 
 ### BLEVE (Druckbehälterzerknall)
+
+![Ablauf eines BLEVE](bilder/bleve.jpg)
+*Ablauf eines BLEVE (Folie 226)*
 
 Ein beheizter Flüssiggasbehälter birst: Trümmerteile fliegen wie Schrapnelle bis zu 500 m weit, die Flüssigkeit verdampft schlagartig und zündet – Feuerball bis ca. 80 m hoch und 50 m breit.
 
