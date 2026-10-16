@@ -116,19 +116,41 @@ app.use(express.json({ limit: '10kb' }));
 // ---------------------------------------------------------------------------
 const publicDir = path.join(__dirname, 'public');
 
+// Cache-Busting: an app.js/style.css wird ein Kürzel ihres Inhalts gehängt (?v=…).
+// So holen Browser und Cloudflare nach jedem Update automatisch die neue Version.
+function dateiKuerzel(datei) {
+  try {
+    return crypto.createHash('sha1').update(require('fs').readFileSync(path.join(publicDir, datei))).digest('hex').slice(0, 10);
+  } catch (e) {
+    return String(Date.now());
+  }
+}
+const VERSION = { app: dateiKuerzel('app.js'), css: dateiKuerzel('style.css') };
+function htmlMitVersion(datei) {
+  return require('fs').readFileSync(path.join(publicDir, datei), 'utf8')
+    .replace('/assets/style.css"', `/assets/style.css?v=${VERSION.css}"`)
+    .replace('/app.js"', `/app.js?v=${VERSION.app}"`);
+}
+const HTML = { index: htmlMitVersion('index.html'), login: htmlMitVersion('login.html') };
+function sendHtml(res, name) {
+  res.setHeader('Cache-Control', 'no-cache');
+  res.type('html').send(HTML[name]);
+}
+
 app.get('/titel', (req, res) => res.json({ titel: SITE_TITLE }));
 app.get('/health', (req, res) => res.json({ ok: true }));
 app.get('/robots.txt', (req, res) => res.type('text/plain').send('User-agent: *\nDisallow: /\n'));
 
 app.get('/login', (req, res) => {
   if (isValidSession(readCookie(req, COOKIE_NAME))) return res.redirect('/');
-  res.sendFile(path.join(publicDir, 'login.html'));
+  sendHtml(res, 'login');
 });
 
 app.get('/assets/:file', (req, res, next) => {
   // Nur Styles/Icons, die auch die Login-Seite braucht, sind ohne Anmeldung erreichbar
   const allowed = ['style.css', 'icon.svg'];
   if (!allowed.includes(req.params.file)) return next();
+  res.setHeader('Cache-Control', 'no-cache');
   res.sendFile(path.join(publicDir, req.params.file));
 });
 
@@ -218,10 +240,16 @@ app.get('/bilder/:modul/:thema/:datei', (req, res) => {
   res.sendFile(file);
 });
 
-app.use(express.static(publicDir, { index: 'index.html', extensions: ['html'] }));
+app.get(['/', '/index.html'], (req, res) => sendHtml(res, 'index'));
+
+app.use(express.static(publicDir, {
+  index: false,
+  // Browser/Cloudflare sollen immer nachfragen, ob es eine neue Version gibt
+  setHeaders: (res) => res.setHeader('Cache-Control', 'no-cache'),
+}));
 
 // Alles andere -> App (Navigation läuft im Browser)
-app.get('*', (req, res) => res.sendFile(path.join(publicDir, 'index.html')));
+app.get('*', (req, res) => sendHtml(res, 'index'));
 
 app.listen(PORT, () => {
   console.log(`${SITE_TITLE} läuft auf Port ${PORT}`);
