@@ -114,7 +114,8 @@ mark { background: #ffe08a; color: #1c1917; border-radius: 3px; padding: 0 2px; 
   color: var(--text); text-decoration: none; font-weight: 600;
 }
 .nav-top:hover, .nav-thema a:hover { background: var(--bg); }
-.nav-quiz { color: var(--rot); }
+.nav-sep { border-top: 1px solid var(--linie); margin: 18px 8px 8px; }
+.quiz-hint { margin-top: 28px; color: var(--muted); font-size: .94rem; }
 .nav-modul {
   margin: 18px 12px 6px; font-size: .75rem; font-weight: 700;
   letter-spacing: .06em; text-transform: uppercase; color: var(--muted);

@@ -74,7 +74,6 @@
 
   function buildSidebar() {
     var h = '<a class="nav-top" href="#/">Startseite</a>';
-    h += '<a class="nav-top nav-quiz" href="#/uebung">Übungsprüfung</a>';
     struktur.module.forEach(function (m) {
       h += '<div class="nav-modul">' + esc(m.titel) + '</div>';
       m.themen.forEach(function (t) {
@@ -92,6 +91,7 @@
       });
     });
     if (!struktur.module.length) h += '<p class="muted pad">Noch keine Inhalte vorhanden.</p>';
+    h += '<div class="nav-sep"></div><a class="nav-top nav-quiz" href="#/uebung">Übungsprüfung</a>';
     sidebar.innerHTML = h;
     Array.prototype.forEach.call(sidebar.querySelectorAll('details.nav-thema'), function (d) {
       d.addEventListener('toggle', function () { store('nav-open:' + d.getAttribute('data-key'), d.open); });
@@ -110,8 +110,7 @@
     setTitle('');
     var last = store('quiz-verlauf') || [];
     var h = '<section class="hero"><h1>Willkommen</h1>' +
-      '<p>Hier findest du alle Lerninhalte aus der Ausbildung – zum Nachlesen, mit Prüfungsfragen zum Aufklappen und einer Übungsprüfung.</p>' +
-      '<a class="btn btn-primary" href="#/uebung">Übungsprüfung starten</a></section>';
+      '<p>Hier findest du alle Lerninhalte aus der Ausbildung – zum Nachlesen und mit Prüfungsfragen zum Aufklappen.</p></section>';
     struktur.module.forEach(function (m) {
       h += '<h2 class="modul-title">' + esc(m.titel) + '</h2>';
       if (m.beschreibung) h += '<p class="muted">' + esc(m.beschreibung) + '</p>';
@@ -127,6 +126,7 @@
       });
       h += '</div>';
     });
+    h += '<p class="quiz-hint">Wissen testen? <a href="#/uebung">Zur Übungsprüfung →</a></p>';
     if (last.length) {
       h += '<h2 class="modul-title">Deine letzten Übungsprüfungen</h2><div class="table-wrap"><table><thead><tr><th>Datum</th><th>Themen</th><th>Ergebnis</th></tr></thead><tbody>';
       last.slice(0, 5).forEach(function (r) {
