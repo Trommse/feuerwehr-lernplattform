@@ -14,6 +14,8 @@ const SESSION_SECRET = process.env.SESSION_SECRET || crypto.randomBytes(32).toSt
 const SESSION_DAYS = parseInt(process.env.SESSION_DAYS || '30', 10);
 const SITE_TITLE = process.env.SITE_TITLE || 'Tim’s Feuerwehr Lernplattform';
 const COOKIE_SECURE = process.env.COOKIE_SECURE === 'true';
+// Optional: geheimer Teil der Adresse, unter der Bilder ohne Anmeldung abrufbar sind (für Confluence)
+const BILD_TOKEN = process.env.BILD_TOKEN || '';
 
 if (!APP_PASSWORD) {
   console.error('FEHLER: APP_PASSWORD ist nicht gesetzt. Bitte in der .env-Datei eintragen.');
@@ -128,6 +130,16 @@ app.get('/assets/:file', (req, res, next) => {
   const allowed = ['style.css', 'icon.svg'];
   if (!allowed.includes(req.params.file)) return next();
   res.sendFile(path.join(publicDir, req.params.file));
+});
+
+// Bilder ohne Anmeldung – nur mit geheimem Token in der Adresse (z. B. zum Einbinden in Confluence)
+app.get('/oeffentlich/:token/:modul/:thema/:datei', (req, res) => {
+  const ok = BILD_TOKEN.length >= 16 && req.params.token.length === BILD_TOKEN.length &&
+    crypto.timingSafeEqual(Buffer.from(req.params.token), Buffer.from(BILD_TOKEN));
+  const file = ok && content.bildPfad(req.params.modul, req.params.thema, req.params.datei);
+  if (!file) return res.status(404).end();
+  res.setHeader('Cache-Control', 'public, max-age=86400');
+  res.sendFile(file);
 });
 
 app.post('/login', (req, res) => {
