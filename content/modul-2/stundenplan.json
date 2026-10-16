@@ -1,0 +1,75 @@
+{
+  "titel": "Lehrgangsplan TM – Modul 2",
+  "veranstalter": "Freiwillige Feuerwehr Datteln",
+  "zeitraum": "09.10.2026 – 31.10.2026",
+  "lehrgangsleiter": "Jens Möller",
+  "stellvertreter": "Klaus Schmitz",
+  "hinweis": "Im Original-Plan steht beim Mittwoch „21.10.2036“ – gemeint ist der 21.10.2026.",
+  "termine": [
+    {
+      "datum": "2026-10-09", "beginn": "19:00", "ende": "21:25",
+      "einheiten": [
+        { "ue": 1, "zeit": "19:00 – 19:45", "thema": "Einführung und Begrüßung", "ausbilder": "Leitung der Feuerwehr, Lehrgangsleiter" },
+        { "ue": 2, "zeit": "19:50 – 21:25", "thema": "Rechte und Pflichten des Feuerwehrangehörigen, Unfallversicherungswesen", "ausbilder": "H.-J. Pieper", "link": "rechte-und-pflichten" }
+      ]
+    },
+    {
+      "datum": "2026-10-10", "beginn": "08:30", "ende": "14:30",
+      "einheiten": [
+        { "ue": 4, "thema": "Rechte und Pflichten des Feuerwehrangehörigen, Unfallversicherungswesen", "ausbilder": "H.-J. Pieper", "link": "rechte-und-pflichten" },
+        { "ue": 3, "thema": "Gefahren der Einsatzstelle", "ausbilder": "H.-J. Berkenhoff, T. Goldstein", "link": "gefahren-der-einsatzstelle" }
+      ]
+    },
+    {
+      "datum": "2026-10-14", "beginn": "19:00", "ende": "21:25",
+      "einheiten": [
+        { "ue": 3, "thema": "Gefahren der Einsatzstelle", "ausbilder": "H.-J. Berkenhoff, T. Goldstein", "link": "gefahren-der-einsatzstelle" }
+      ]
+    },
+    {
+      "datum": "2026-10-16", "beginn": "19:00", "ende": "21:25",
+      "einheiten": [
+        { "ue": 3, "thema": "Gefahren der Einsatzstelle", "ausbilder": "H.-J. Berkenhoff, T. Goldstein", "link": "gefahren-der-einsatzstelle" }
+      ]
+    },
+    {
+      "datum": "2026-10-17", "beginn": "08:30", "ende": "14:30",
+      "einheiten": [
+        { "ue": 4, "thema": "Gefahren der Einsatzstelle", "ausbilder": "H.-J. Berkenhoff, T. Goldstein", "link": "gefahren-der-einsatzstelle" },
+        { "ue": 3, "thema": "Sprungpolster SP 16, Knoten und Stiche", "ausbilder": "Schmitz, Möller, Dey", "link": "knoten-und-leitern" }
+      ]
+    },
+    {
+      "datum": "2026-10-21", "beginn": "19:00", "ende": "21:25",
+      "einheiten": [
+        { "ue": 3, "thema": "Grundtätigkeiten Retten, Vornahme von Leitern", "ausbilder": "Schmitz, Möller, Dey, Krüger", "link": "knoten-und-leitern" }
+      ]
+    },
+    {
+      "datum": "2026-10-23", "beginn": "19:00", "ende": "21:25",
+      "einheiten": [
+        { "ue": 3, "thema": "Retten aus dem Obergeschoss", "ausbilder": "Schmitz, Möller, Dey, H.-J. Berkenhoff" }
+      ]
+    },
+    {
+      "datum": "2026-10-24", "beginn": "08:30", "ende": "14:30",
+      "einheiten": [
+        { "ue": 7, "thema": "Selbstretten, Sichern", "ausbilder": "Schmitz, Möller, Dey, Krüger" }
+      ]
+    },
+    {
+      "datum": "2026-10-30", "beginn": "19:00", "ende": "21:25",
+      "einheiten": [
+        { "ue": 3, "thema": "Leiterhebel, Wiederholung", "ausbilder": "Schmitz, Möller, Dey, Krüger" }
+      ]
+    },
+    {
+      "datum": "2026-10-31", "beginn": "08:30", "ende": "13:00", "pruefung": true,
+      "einheiten": [
+        { "ue": 1, "thema": "Schriftliche Prüfung", "ausbilder": "Leitung der Feuerwehr" },
+        { "ue": 3, "thema": "Praktische Prüfung (Retten, Selbstretten, Sichern)", "ausbilder": "Alle Ausbilder" },
+        { "ue": 1, "thema": "Aussprache und Verabschiedung", "ausbilder": "" }
+      ]
+    }
+  ]
+}

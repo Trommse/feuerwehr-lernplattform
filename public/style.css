@@ -303,3 +303,37 @@ legend { font-weight: 700; margin-bottom: 8px; }
 /* ------------------------------------------------ Bilder aus den Folien */
 .prose img { display: block; max-width: min(100%, 640px); height: auto; margin: 14px 0 4px; border: 1px solid var(--linie); border-radius: 10px; background: #fff; cursor: zoom-in; }
 .prose img + em, .prose p > em:only-child { display: block; font-size: .85rem; color: var(--muted); margin-bottom: 14px; }
+
+/* ------------------------------------------------ Stundenplan */
+.nav-plan {
+  display: block; padding: 8px 12px; border-radius: 8px;
+  color: var(--text); text-decoration: none; font-weight: 600;
+}
+.nav-plan:hover { background: var(--bg); }
+.plan-hint {
+  margin: 4px 0 16px; padding: 10px 14px; border-radius: 10px;
+  background: var(--flaeche); border: 1px solid var(--linie); font-size: .94rem;
+}
+.plan { list-style: none; padding: 0; margin: 20px 0; display: grid; gap: 12px; }
+.plan-tag {
+  background: var(--flaeche); border: 1px solid var(--linie); border-radius: 12px;
+  padding: 12px 16px; border-left: 4px solid var(--linie);
+}
+.plan-tag.vorbei { opacity: .6; }
+.plan-tag.naechster { border-left-color: var(--rot); box-shadow: 0 0 0 1px var(--rot); opacity: 1; }
+.plan-tag.pruefungstag { border-left-color: var(--rot); }
+.plan-kopf { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 12px; margin-bottom: 6px; }
+.plan-datum { font-weight: 700; }
+.plan-zeit { color: var(--muted); font-size: .92rem; }
+.plan-badge {
+  font-size: .75rem; font-weight: 700; padding: 2px 8px; border-radius: 999px;
+  background: var(--bg); color: var(--muted);
+}
+.plan-tag.naechster .plan-badge, .plan-badge.pruefung { background: var(--rot-hell); color: var(--rot); }
+.plan-tag ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+.plan-tag ul li { display: flex; gap: 12px; align-items: flex-start; }
+.plan-ue {
+  flex: 0 0 auto; min-width: 44px; text-align: center; font-size: .78rem; font-weight: 700;
+  padding: 2px 6px; border-radius: 6px; background: var(--bg); color: var(--muted); margin-top: 2px;
+}
+.plan-thema { font-weight: 600; }

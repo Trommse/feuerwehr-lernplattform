@@ -76,6 +76,7 @@
     var h = '<a class="nav-top" href="#/">Startseite</a>';
     struktur.module.forEach(function (m) {
       h += '<div class="nav-modul">' + esc(m.titel) + '</div>';
+      if (m.stundenplan) h += '<a class="nav-plan" href="#/stundenplan/' + m.slug + '">Stundenplan</a>';
       m.themen.forEach(function (t) {
         var base = '#/m/' + m.slug + '/' + t.slug;
         var open = store('nav-open:' + m.slug + '/' + t.slug);
@@ -114,6 +115,7 @@
     struktur.module.forEach(function (m) {
       h += '<h2 class="modul-title">' + esc(m.titel) + '</h2>';
       if (m.beschreibung) h += '<p class="muted">' + esc(m.beschreibung) + '</p>';
+      if (m.stundenplan) h += naechsterTerminHinweis(m);
       h += '<div class="cards">';
       m.themen.forEach(function (t) {
         h += '<a class="card" href="#/m/' + m.slug + '/' + t.slug + '">' +
@@ -135,6 +137,103 @@
       h += '</tbody></table></div><p class="muted small">Wird nur in diesem Browser gespeichert.</p>';
     }
     render(h);
+  }
+
+  // ---------------------------------------------------------------- Stundenplan
+  var WOCHENTAGE = ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'];
+
+  function terminDatum(t, uhrzeit) {
+    var d = t.datum.split('-');
+    var z = (uhrzeit || '00:00').split(':');
+    return new Date(+d[0], +d[1] - 1, +d[2], +z[0], +z[1]);
+  }
+
+  function datumText(t, kurz) {
+    var d = terminDatum(t);
+    var tag = WOCHENTAGE[d.getDay()];
+    var dm = ('0' + d.getDate()).slice(-2) + '.' + ('0' + (d.getMonth() + 1)).slice(-2) + '.';
+    return (kurz ? tag.slice(0, 2) + ', ' : tag + ', ') + dm + (kurz ? '' : d.getFullYear());
+  }
+
+  // Status eines Termins: vorbei / heute (läuft oder kommt noch) / kommend
+  function terminStatus(t, jetzt) {
+    if (terminDatum(t, t.ende) < jetzt) return 'vorbei';
+    if (terminDatum(t) <= jetzt) return 'heute';
+    return 'kommend';
+  }
+
+  function naechsterTermin(plan, jetzt) {
+    for (var i = 0; i < plan.termine.length; i++) {
+      if (terminStatus(plan.termine[i], jetzt) !== 'vorbei') return plan.termine[i];
+    }
+    return null;
+  }
+
+  function tageBis(t, jetzt) {
+    var heute = new Date(jetzt.getFullYear(), jetzt.getMonth(), jetzt.getDate());
+    return Math.round((terminDatum(t) - heute) / 86400000);
+  }
+
+  function naechsterTerminHinweis(m) {
+    var jetzt = new Date();
+    var n = naechsterTermin(m.stundenplan, jetzt);
+    var link = '<a href="#/stundenplan/' + m.slug + '">Stundenplan →</a>';
+    if (!n) return '<p class="plan-hint">Lehrgang abgeschlossen. ' + link + '</p>';
+    var tage = tageBis(n, jetzt);
+    var wann = tage === 0 ? 'Heute' : tage === 1 ? 'Morgen' : datumText(n, true);
+    var themen = n.einheiten.map(function (e) { return e.thema; }).join(' · ');
+    var h = '<p class="plan-hint"><strong>Nächster Termin:</strong> ' + esc(wann) + ', ' + esc(n.beginn) + ' Uhr – ' + esc(themen) + '. ' + link;
+    var pruefung = m.stundenplan.termine.filter(function (t) { return t.pruefung; })[0];
+    if (pruefung && pruefung !== n && terminStatus(pruefung, jetzt) === 'kommend') {
+      var p = tageBis(pruefung, jetzt);
+      h += '<br><span class="muted">Noch ' + p + ' ' + (p === 1 ? 'Tag' : 'Tage') + ' bis zur Prüfung.</span>';
+    }
+    return h + '</p>';
+  }
+
+  function viewStundenplan(modul) {
+    var m = struktur.module.filter(function (x) { return x.slug === modul; })[0];
+    if (!m || !m.stundenplan) return notFound();
+    var plan = m.stundenplan;
+    var jetzt = new Date();
+    var naechster = naechsterTermin(plan, jetzt);
+    setTitle('Stundenplan ' + m.titel);
+    var themen = {};
+    m.themen.forEach(function (t) { themen[t.slug] = t; });
+    var gesamtUE = 0;
+    plan.termine.forEach(function (t) { t.einheiten.forEach(function (e) { gesamtUE += e.ue || 0; }); });
+
+    var h = '<p class="crumbs"><a href="#/">Start</a> › ' + esc(m.titel) + '</p>' +
+      '<h1>' + esc(plan.titel || 'Stundenplan') + '</h1>' +
+      '<p class="muted">' + esc(plan.veranstalter || '') + (plan.zeitraum ? ' · ' + esc(plan.zeitraum) : '') +
+      ' · ' + plan.termine.length + ' Termine, ' + gesamtUE + ' UE</p>';
+    if (plan.lehrgangsleiter) {
+      h += '<p class="small">Lehrgangsleiter: <strong>' + esc(plan.lehrgangsleiter) + '</strong>' +
+        (plan.stellvertreter ? ' · Stellvertreter: ' + esc(plan.stellvertreter) : '') + '</p>';
+    }
+    h += '<ol class="plan">';
+    plan.termine.forEach(function (t) {
+      var status = terminStatus(t, jetzt);
+      var cls = 'plan-tag ' + status + (t === naechster ? ' naechster' : '') + (t.pruefung ? ' pruefungstag' : '');
+      var badge = t === naechster ? (status === 'heute' ? 'Heute' : 'Nächster Termin') : (status === 'vorbei' ? 'Erledigt' : '');
+      h += '<li class="' + cls + '"><div class="plan-kopf"><span class="plan-datum">' + esc(datumText(t)) + '</span>' +
+        '<span class="plan-zeit">' + esc(t.beginn) + ' – ' + esc(t.ende) + ' Uhr</span>' +
+        (t.pruefung ? '<span class="plan-badge pruefung">Prüfung</span>' : '') +
+        (badge ? '<span class="plan-badge">' + badge + '</span>' : '') + '</div><ul>';
+      t.einheiten.forEach(function (e) {
+        var th = e.link && themen[e.link];
+        var titel = th ? '<a href="#/m/' + m.slug + '/' + e.link + '">' + esc(e.thema) + '</a>' : esc(e.thema);
+        h += '<li><span class="plan-ue">' + (e.ue || '') + ' UE</span><div><div class="plan-thema">' + titel +
+          (e.zeit ? ' <span class="muted small">(' + esc(e.zeit) + ')</span>' : '') + '</div>' +
+          (e.ausbilder ? '<div class="muted small">' + esc(e.ausbilder) + '</div>' : '') + '</div></li>';
+      });
+      h += '</ul></li>';
+    });
+    h += '</ol>';
+    h += '<p class="muted small">UE = Unterrichtseinheit (45 Minuten). Verlinkte Themen führen zu den passenden Lernseiten.</p>';
+    render(h);
+    var el = main.querySelector('.plan-tag.naechster');
+    if (el && el.previousElementSibling) el.scrollIntoView({ block: 'center' });
   }
 
   function viewThema(modul, thema) {
@@ -432,6 +531,7 @@
     if (parts[0] === 'm' && parts.length === 3) return viewThema(parts[1], parts[2]);
     if (parts[0] === 'm' && parts.length === 4) return viewSeite(parts[1], parts[2], parts[3]);
     if (parts[0] === 'pruefung' && parts.length === 3) return viewPruefung(parts[1], parts[2]);
+    if (parts[0] === 'stundenplan' && parts.length === 2) return viewStundenplan(parts[1]);
     if (parts[0] === 'uebung' && parts[1] === 'laeuft') return quiz ? renderQuestion() : (location.hash = '#/uebung');
     if (parts[0] === 'uebung') return viewUebungStart((query.themen || '').split(',').filter(Boolean));
     if (parts[0] === 'suche') return viewSuche(query.q || '');

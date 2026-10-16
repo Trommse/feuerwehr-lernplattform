@@ -7,6 +7,27 @@ const content = require('../lib/content');
 let fehler = 0;
 for (const m of content.getStructure().module) {
   console.log(`\n${m.titel}`);
+  const planDatei = path.join(content.CONTENT_DIR, m.slug, 'stundenplan.json');
+  if (fs.existsSync(planDatei)) {
+    if (!m.stundenplan || !Array.isArray(m.stundenplan.termine)) {
+      fehler++;
+      console.log('  ! stundenplan.json ist kein gültiges JSON oder hat keine "termine"');
+    } else {
+      console.log(`  Stundenplan: ${m.stundenplan.termine.length} Termine`);
+      for (const t of m.stundenplan.termine) {
+        if (!/^\d{4}-\d{2}-\d{2}$/.test(t.datum || '') || !/^\d{2}:\d{2}$/.test(t.beginn || '') || !/^\d{2}:\d{2}$/.test(t.ende || '')) {
+          fehler++;
+          console.log(`  ! Termin mit ungültigem Datum/Uhrzeit: ${JSON.stringify(t.datum)}`);
+        }
+        for (const e of t.einheiten || []) {
+          if (e.link && !m.themen.some((th) => th.slug === e.link)) {
+            fehler++;
+            console.log(`  ! Termin ${t.datum}: Link auf unbekanntes Thema "${e.link}"`);
+          }
+        }
+      }
+    }
+  }
   for (const t of m.themen) {
     console.log(`  ${t.titel}: ${t.seiten.length} Seiten, ${t.pruefungsfragen} Prüfungsfragen, ${t.uebungsfragen} Übungsfragen`);
     const datei = path.join(content.CONTENT_DIR, m.slug, t.slug, 'uebung.md');

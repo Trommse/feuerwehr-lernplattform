@@ -103,3 +103,28 @@ Prüfen, ob alles stimmt:
 ```sh
 docker compose exec lernplattform npm run check
 ```
+
+## Stundenplan (`stundenplan.json`, optional)
+
+Liegt direkt im Modul-Ordner, z. B. `content/modul-2/stundenplan.json`. Dann erscheint im Menü unter dem Modul der Punkt **Stundenplan**, und auf der Startseite steht der nächste Termin mit einem Countdown bis zur Prüfung.
+
+```json
+{
+  "titel": "Lehrgangsplan TM – Modul 2",
+  "zeitraum": "09.10.2026 – 31.10.2026",
+  "lehrgangsleiter": "…",
+  "termine": [
+    {
+      "datum": "2026-10-21", "beginn": "19:00", "ende": "21:25",
+      "einheiten": [
+        { "ue": 3, "thema": "Grundtätigkeiten Retten", "ausbilder": "…", "link": "knoten-und-leitern" }
+      ]
+    },
+    { "datum": "2026-10-31", "beginn": "08:30", "ende": "13:00", "pruefung": true, "einheiten": [ … ] }
+  ]
+}
+```
+
+- `datum` immer als `JJJJ-MM-TT`, Uhrzeiten als `HH:MM`.
+- `link` (optional) = Ordnername eines Themas → das Thema wird im Stundenplan verlinkt.
+- `"pruefung": true` markiert den Prüfungstag (für den Countdown).
