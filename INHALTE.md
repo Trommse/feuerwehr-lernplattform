@@ -61,6 +61,17 @@ Normaler Text, **fett**, *kursiv*.
 
 (Jeder Kasten ist eine eigene Zeile mit Leerzeile dazwischen.)
 
+## Bilder
+
+Bilder (JPG/PNG) in den Unterordner `bilder/` des Themas legen und in der Lernseite so einbinden:
+
+```markdown
+![Kurze Beschreibung](bilder/dateiname.jpg)
+*Bildunterschrift (Folie 12)*
+```
+
+Dateinamen: Kleinbuchstaben, Zahlen, Bindestriche. Bilder sind nur nach der Anmeldung abrufbar.
+
 ## Prüfungsfragen (`pruefung.md`)
 
 ```markdown
